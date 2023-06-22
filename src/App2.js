@@ -1,6 +1,6 @@
-// 스타일 연동 스터디 페이지
+/* 스타일 연동 스터디 페이지 */
 
-// sass loader가 함께 들어가 있어 watch 할 필요가 없다.
+// Sass Loader가 함께 들어가 있어 watch 할 필요가 없다.
 import './scss/style.scss';
 
 function App2() {

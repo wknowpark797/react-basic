@@ -10,10 +10,8 @@ import App5 from './App5';
 import { HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<HashRouter>
-			<App5 />
-		</HashRouter>
-	</React.StrictMode>,
+	<HashRouter>
+		<App5 />
+	</HashRouter>,
 	document.getElementById('root')
 );
