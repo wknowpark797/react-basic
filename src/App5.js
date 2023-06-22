@@ -1,5 +1,6 @@
 // 반복문 적용 스터디 페이지
 
+import Card from './Card';
 import './scss/style.scss';
 
 function App5() {
@@ -9,12 +10,9 @@ function App5() {
 		<div className='wrap'>
 			<h1>Color Chart</h1>
 			{colors.map((color, idx) => {
-				return (
-					<article key={idx}>
-						<div className='bg' style={{ backgroundColor: color }}></div>
-						<div className='txt'>{color}</div>
-					</article>
-				);
+				// 부모요소에서 color, idx props로 Card 컴포넌트에 데이터 전달
+				// key 값은 반복하는 대상 Card 컴포넌트에 적용
+				return <Card color={color} idx={idx} key={idx} />;
 			})}
 		</div>
 	);
@@ -34,4 +32,9 @@ export default App5;
     - JSX에서 조건문은 삼항연산자와 && 연산자만 사용 가능
   - JSX로 반복되는 요소를 동적으로 만들 때 무조건 key 값으로 고유값을 등록해야 한다.
     - 리액트가 반복되는 요소를 개별적으로 인지하기 위함
+*/
+
+/*
+  외부 컴포넌트 파일을 import 연결시 특정 데이터값을 전달하기 위해 props를 통해 전달
+  - 기본적으로 리액트는 단방향 데이터 바인딩 (부모 -> 자식 데이터 전달)
 */
