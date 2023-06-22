@@ -1,15 +1,21 @@
 // 반복문 적용 스터디 페이지
 
+import './scss/style.scss';
+
 function App5() {
 	const colors = ['green', 'orange', 'hotpink', 'cornflowerblue', 'black'];
 
 	return (
 		<div className='wrap'>
-			<ul>
-				{colors.map((color, idx) => {
-					return <li key={idx}>{color}</li>;
-				})}
-			</ul>
+			<h1>Color Chart</h1>
+			{colors.map((color, idx) => {
+				return (
+					<article key={idx}>
+						<div className='bg' style={{ backgroundColor: color }}></div>
+						<div className='txt'>{color}</div>
+					</article>
+				);
+			})}
 		</div>
 	);
 }

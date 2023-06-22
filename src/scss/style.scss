@@ -1,5 +1,27 @@
 @import 'reset';
 
 .wrap {
-	border: 1px solid red;
+	h1 {
+		font: normal 100px/1 'arial';
+		margin-bottom: 20px;
+	}
+
+	article {
+		width: 200px;
+		border: 1px solid #777;
+		margin: 20px;
+		float: left;
+		.bg {
+			width: 100%;
+			height: 200px;
+			background: gray;
+		}
+		.txt {
+			width: 100%;
+			padding: 20px;
+			background: #fff;
+			font: 14px/1 'arial';
+			color: #333;
+		}
+	}
 }
