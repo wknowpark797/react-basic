@@ -25,12 +25,21 @@ const App = () => (
 // 하나의 파일에서 여러개의 컴포넌트를 비구조화할당으로 import 가능
 import { Header, Footer, Section } from './Common';
 
+const name = '홍길동';
+const class1 = 'box';
+
 function App() {
 	return (
+		// 일반 스크립트 주석 사용가능
 		<>
+			{/* JSX 문법 안쪽에서 주석을 중괄호 안쪽에서 처리 */}
+			{/* JSX 안쪽에서 연산이 필요한 부분을 중괄호 처리 */}
+
 			<Header />
 			<Section />
 			<Footer />
+
+			<p className={class1}>{name}님 안녕하세요.</p>
 		</>
 	);
 }
