@@ -1,6 +1,20 @@
-function App() {
-	return <h1>Hello World</h1>;
-}
+/*
+const App = () => {
+	return (
+		<>
+			<h1 id='title'>Hello</h1>
+			<h2 className='title2'>World</h2>
+		</>
+	);
+};
+*/
+
+const App = () => (
+	<>
+		<h1 id='title'>Hello</h1>
+		<h2 className='title2'>World</h2>
+	</>
+);
 
 /*
 	function App() {
@@ -9,7 +23,18 @@ function App() {
 
 	- 해당 코드를 JSX로 표현
 	- DOM 요소를 반환하는 컴포넌트
+	
+	[ 컴포넌트 파일 생성 규칙 ]
 	- 컴포넌트 함수 이름은 대문자로 시작
+	- 해당 함수는 JSX를 리턴해야 한다.
+	- export로 다른 파일에서 활용할 수 있도록 해준다.
+	- 하나의 컴포넌트 함수는 복수요소의 JSX를 리턴할 수 없다. (wrapping 태그로 감싸준다.)
+	- 복수개의 JSX를 리턴할 때 괄호로 감싸준다.
+	- 단수개의 JSX를 리턴할 때 괄호 생략이 가능하다.
+	- 중첩되는 태그 없이 사용하기 위해서 fragment를 활용할 수 있다. (<></>)
+	- 클래스명을 적용할 때 className으로 표기 (class 객체지향시 활용하는 예약어이기 때문)
+	- 함수를 화살표 형태로도 제작이 가능하다.
+	- 화살표 함수 안쪽의 중괄호와 return 구문은 생략이 가능하다.
 */
 
 export default App;
