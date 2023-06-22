@@ -16,6 +16,8 @@ const App = () => (
 	</>
 );
 
+export default App;
+
 /*
 	function App() {
 		return document.createElement('h1').innerText('Hello World');	
@@ -36,8 +38,6 @@ const App = () => (
 	- 함수를 화살표 형태로도 제작이 가능하다.
 	- 화살표 함수 안쪽의 중괄호와 return 구문은 생략이 가능하다.
 */
-
-export default App;
 
 /*
 	SSR (Server Side Rendering)
