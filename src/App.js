@@ -9,12 +9,31 @@ const App = () => {
 };
 */
 
+/*
 const App = () => (
 	<>
 		<h1 id='title'>Hello</h1>
 		<h2 className='title2'>World</h2>
 	</>
 );
+*/
+
+// import Footer from './Footer';
+// import Header from './Header';
+// import Section from './Section';
+
+// 하나의 파일에서 여러개의 컴포넌트를 비구조화할당으로 import 가능
+import { Header, Footer, Section } from './Common';
+
+function App() {
+	return (
+		<>
+			<Header />
+			<Section />
+			<Footer />
+		</>
+	);
+}
 
 export default App;
 
