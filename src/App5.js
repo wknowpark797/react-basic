@@ -12,7 +12,9 @@ function App5() {
 			{colors.map((color, idx) => {
 				// 부모요소에서 color, idx props로 Card 컴포넌트에 데이터 전달
 				// key 값은 반복하는 대상 Card 컴포넌트에 적용
-				return <Card color={color} idx={idx} key={idx} />;
+				if (idx === 2) return <Card key={idx} color={color} width={'150px'} />;
+				else if (idx === 3) return <Card key={idx} color={color} />;
+				else return <Card key={idx} color={color} width={'300px'} />;
 			})}
 		</div>
 	);
