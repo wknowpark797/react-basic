@@ -5,13 +5,14 @@ import ReactDOM from 'react-dom';
 // import App2 from './App2';
 // import App3 from './App3';
 // import App4 from './App4';
-import App5 from './App5';
+// import App5 from './App5';
+import App6 from './App6';
 
 import { HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
 	<HashRouter>
-		<App5 />
+		<App6 />
 	</HashRouter>,
 	document.getElementById('root')
 );
