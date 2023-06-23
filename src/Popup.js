@@ -16,7 +16,7 @@ function Popup({ setIsPop }) {
 
 	return (
 		<aside style={popStyle}>
-			{/* 팝업(자기자신)을 닫아주는 state가 부모 컴포넌트에 있기 때문에 부모 컴포넌트로부터 state 변경함수를 props로 전달받아 호출한다. */}
+			{/* 팝업(자기자신)을 닫아주는 state가 부모 컴포넌트에 있기 때문에 부모 컴포넌트로부터 state 변경함수를 props로 전달받아 호출 */}
 			<button onClick={() => setIsPop(false)}>close</button>
 		</aside>
 	);

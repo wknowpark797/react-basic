@@ -1,5 +1,9 @@
-/* Google Font 연결 */
-// import 연결 추천
+/*
+	리액트에서 Google Fonts 연결하기
+
+	1. public > index.html 파일에 링크 연결
+	2. src > scss > style.scss 파일에 @import 연결 (추천)
+*/
 
 import './scss/style.scss';
 

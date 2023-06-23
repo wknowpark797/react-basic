@@ -1,5 +1,5 @@
 function Card({ color = 'gray', width = '200px' }) {
-	// props 데이터를 전달받을 때 비구조화할당으로 받으면 효율적이다.
+	// props 데이터를 전달받을 때 비구조화할당으로 받을 수 있다.
 	// console.log('props: ', props);
 
 	return (
