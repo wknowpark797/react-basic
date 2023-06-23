@@ -20,6 +20,8 @@ function App6() {
 	const [IsPop, setIsPop] = useState(false);
 	const [TitleColor, setTitleColor] = useState('#333'); // uss 키워드 자동완성
 
+	// 미션) 팝업의 닫기 버튼 클릭시 팝업 제거
+
 	return (
 		<>
 			<main>
@@ -38,7 +40,9 @@ function App6() {
 			</main>
 
 			{/* JSX 안쪽에서 조건문은 삼항연산자와 &&연산자로만 처리 가능 */}
-			{IsPop && <Popup />}
+			{/* 자식 컴포넌트로 setIsPop state 변경 함수를 props로 전달 */}
+			{/* 부모 자식 관계의 useState가 고민된다면 부모 컴포넌트에 만들어 자식 컴포넌트에 전달하는것을 추천 */}
+			{IsPop && <Popup setIsPop={setIsPop} />}
 		</>
 	);
 }
