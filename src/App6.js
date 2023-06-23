@@ -16,13 +16,15 @@ function App6() {
 	let isPop = false;
   */
 
-	// useState는 배열값을 리턴 [인수로 전달한 값을 state에 담아서 첫번째 값, 해당 state를 변경할 수 있는 전용함수]
+	// useState는 배열값을 리턴 [인수로 전달한 값을 state에 담은 첫번째 값, 해당 state를 변경할 수 있는 전용함수]
 	const [IsPop, setIsPop] = useState(false);
+	const [TitleColor, setTitleColor] = useState('#333'); // uss 키워드 자동완성
 
 	return (
 		<>
 			<main>
 				<h1
+					style={{ color: TitleColor }}
 					onClick={() => {
 						// isPop = true;
 						setIsPop(true);
@@ -30,6 +32,9 @@ function App6() {
 				>
 					메인 컨텐츠
 				</h1>
+
+				<button onClick={() => setTitleColor('red')}>제목 글자색을 red로 변경</button>
+				<button onClick={() => setTitleColor('green')}>제목 글자색을 green으로 변경</button>
 			</main>
 
 			{/* JSX 안쪽에서 조건문은 삼항연산자와 &&연산자로만 처리 가능 */}
