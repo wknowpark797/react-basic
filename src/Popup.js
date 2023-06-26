@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Popup({ setIsPop }) {
 	const popStyle = {
@@ -12,6 +12,23 @@ function Popup({ setIsPop }) {
 	};
 
 	const [Number, setNumber] = useState(0);
+
+	// 의존성 배열이 비어있는 useEffect문 (컴포넌트 생성을 캐치)
+	useEffect(() => {
+		console.log('Popup 컴포넌트 생성');
+	}, []);
+
+	// 의존성 배열의 특정 state값이 등록되어있는 useEffect문 (컴포넌트의 특정 state값 변경을 캐치)
+	useEffect(() => {
+		console.log('Number state값 변경');
+	}, [Number]);
+
+	// 의존성 배열이 비어있는 상태에서 특정 함수가 리턴되는 useEffect문 (컴포넌트 소멸을 캐치)
+	useEffect(() => {
+		return () => {
+			console.log('컴포넌트 소멸');
+		};
+	}, []);
 
 	return (
 		<aside style={popStyle}>
@@ -43,3 +60,14 @@ function Popup({ setIsPop }) {
 }
 
 export default Popup;
+
+/*
+	[ useEffect ]
+	- 컴포넌트의 생명주기를 관장하는 Hook
+	- Life Cycle
+		- 생성 (mount)
+		- 변경 (state change)
+		- 소멸 (unmount)
+	- useEffect(실행할 함수, [의존성배열])
+	- useEffect(() => {}, []);
+*/
