@@ -14,6 +14,8 @@ function App12() {
 	const article = useRef(null);
 	let [Num, setNum] = useState(0);
 
+	let custom = useRef(0);
+
 	// setNum(Num - 1)의 경우 한박자 늦게 동작 (함수에 wrapping되어 있기 때문)
 	// 변경된 state는 다음 렌더링에 적용
 	const prev = () => {
@@ -36,6 +38,9 @@ function App12() {
 			</button>
 			<button onClick={prev}>왼쪽으로 회전</button>
 			<button onClick={next}>오른쪽으로 회전</button>
+
+			<button onClick={() => console.log(++custom.current)}>plus</button>
+			<button onClick={() => console.log(--custom.current)}>minus</button>
 
 			{/* 참조하고 싶은 가상돔 요소를 useRef로 만든 참조객체와 연결 */}
 			<article ref={article}></article>
@@ -79,9 +84,14 @@ export default App12;
 	- 이렇게 만들어진 빈 참조객체를 원하는 가상돔 요소에 ref속성을 지정하여 참조 가능
 	- 참조된 가상요소는 이벤트 발생시 자유롭게 호출이 가능하다.
 	- useRef는 보통 이벤트 연결시 제어해야 하는 가상돔을 참조할 때 주로 쓰인다.
+	- useRef를 변경하면 화면이 재렌더링되지 않는다.
 
 	[ 사용 순서 ]
 	1. 변수에 useRef(null)을 대입해서 인단 빈 참조객체 생성
 	2. 원하는 가상돔 요소에 ref={참조객체}로 연결
 	3. 호출시 참조객체명.current 형식으로 참조된 가상돔 요소를 자유롭게 호출
+
+	[ useRef의 다른 사용예제 ]
+	- 컴포넌트 안쪽에서 특정 값을 변경하고 싶을 때 해당값 변경시 컴포넌트를 재호출 하고 싶지 않을 때
+	- 컴포넌트가 다른 state에 의해 재호출 되더라도 특정 값을 초기화시키고 싶지 않을 때
 */
