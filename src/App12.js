@@ -14,6 +14,8 @@ function App12() {
 	const article = useRef(null);
 	let [Num, setNum] = useState(0);
 
+	// setNum(Num - 1)의 경우 한박자 늦게 동작 (함수에 wrapping되어 있기 때문)
+	// 변경된 state는 다음 렌더링에 적용
 	const prev = () => {
 		setNum(--Num);
 		article.current.style.transform = `rotate(${45 * Num}deg)`;
@@ -68,3 +70,18 @@ function App12() {
 */
 
 export default App12;
+
+/*
+	[ useRef ]
+	const 변수 = useRef(초기값);
+	- 변수에는 useRef의 초기값을 활용하여 빈 참조객체가 생성된다.
+	- 이때 해당 객체안에는 current 키값이 자동생성되면서 초기값이 담긴다.
+	- 이렇게 만들어진 빈 참조객체를 원하는 가상돔 요소에 ref속성을 지정하여 참조 가능
+	- 참조된 가상요소는 이벤트 발생시 자유롭게 호출이 가능하다.
+	- useRef는 보통 이벤트 연결시 제어해야 하는 가상돔을 참조할 때 주로 쓰인다.
+
+	[ 사용 순서 ]
+	1. 변수에 useRef(null)을 대입해서 인단 빈 참조객체 생성
+	2. 원하는 가상돔 요소에 ref={참조객체}로 연결
+	3. 호출시 참조객체명.current 형식으로 참조된 가상돔 요소를 자유롭게 호출
+*/
