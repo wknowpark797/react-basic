@@ -10,13 +10,14 @@ import ReactDOM from 'react-dom';
 // import App7 from './App7';
 // import App8 from './App8';
 // import App9 from './App9';
-import App10 from './App10';
+// import App10 from './App10';
+import App11 from './App11';
 
 import { HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
 	<HashRouter>
-		<App10 />
+		<App11 />
 	</HashRouter>,
 	document.getElementById('root')
 );
