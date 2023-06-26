@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './scss/style.scss';
 
 function Popup({ setIsPop }) {
 	const popStyle = {
@@ -16,6 +17,7 @@ function Popup({ setIsPop }) {
 	// 의존성 배열이 비어있는 useEffect문 (컴포넌트 생성을 캐치)
 	useEffect(() => {
 		console.log('Popup 컴포넌트 생성');
+		document.body.style.overflow = 'hidden';
 	}, []);
 
 	// 의존성 배열의 특정 state값이 등록되어있는 useEffect문 (컴포넌트의 특정 state값 변경을 캐치)
@@ -27,6 +29,7 @@ function Popup({ setIsPop }) {
 	useEffect(() => {
 		return () => {
 			console.log('컴포넌트 소멸');
+			document.body.style.overflow = 'auto';
 		};
 	}, []);
 

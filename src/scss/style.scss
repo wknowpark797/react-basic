@@ -52,3 +52,30 @@ img {
 		stroke-width: 5;
 	}
 }
+
+/*
+	// 생명주기 예제
+	body {
+		height: 3000px;
+		background: linear-gradient(to bottom, yellow, green, hotpink);
+	}
+*/
+
+.wrap2 {
+	padding: 100px;
+
+	article {
+		margin-top: 50px;
+		width: 200px;
+		height: 200px;
+		background: lightgreen;
+		transition: 0.5s;
+
+		&.left {
+			transform: rotate(-45deg);
+		}
+		&.right {
+			transform: rotate(45deg);
+		}
+	}
+}
